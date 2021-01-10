@@ -1,3 +1,11 @@
+@extends('Layouts.ngo.layout')
+@section('content')
+
+
+
+
+
+
 <h1>Ngo  {{Auth::User()->name}}</h1>
 <ul class="navbar-nav ml-auto">
                 <li class="nav-item dropdown">
@@ -17,3 +25,5 @@
                     </div>
                 </li>
             </ul>
+
+            @endsection

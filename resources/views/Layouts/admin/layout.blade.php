@@ -31,7 +31,7 @@
 <body>
     <div id="app">
         @if(Auth::user())
-            @include('Layouts.admin-side-menu') 
+            @include('Layouts.admin.side-menu') 
         <div class="content-wrapper">
         @endif
             <main>
