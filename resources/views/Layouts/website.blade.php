@@ -12,6 +12,7 @@
 
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/website/home.css') }}" rel="stylesheet">
     <link href="{{ asset('css/website/navbar.css') }}" rel="stylesheet">
     <link href="{{ asset('css/website/auth.css') }}" rel="stylesheet">
     <link href="{{ asset('css/website/footer.css') }}" rel="stylesheet">
@@ -42,8 +43,6 @@
                                     <ul>
                                         <li><a href="{{ url('/') }}">home</a></li>
                                         <li><a href="{{ url('/about-us') }}">about us</a></li>
-                                        <li><a href="{{ url('/services') }}">services</a></li>
-                                        <li><a href="{{ url('/gallery') }}">Gallery</a></li>
                                         <li><a href="{{ url('/blog') }}">Blog</a></li>
                                         <li><a href="{{ url('/contact-us') }}">contact</a></li>
 
@@ -51,6 +50,8 @@
                                             <li><a href="{{ route('user.profile') }}">profile</a></li>
                                         @elseif(Auth::User() && Auth::User()->user_type == 'admin')
                                             <li><a href="{{ route('admin.dashboard') }}">dashboard</a></li>
+                                            @elseif(Auth::User() && Auth::User()->user_type == 'ngo')
+                                            <li><a href="{{ route('ngo.dashboard') }}">Dashboard</a></li>
                                         @else
                                             <li><a href="{{ url('/login') }}">login</a></li>
                                         @endif
@@ -93,14 +94,14 @@
                         <h5><b>Links</b></h5>
                         <a href="{{ url('/') }}">Home</a>
                         <a href="{{ url('/about-us') }}">About Us</a>
-                        <a href="{{ url('/services') }}">Services</a>
-                        <a href="{{ url('/gallery') }}">Gallery</a>
                         <a href="{{ url('/blog') }}">Blog</a>
                         <a href="{{ url('/contact-us') }}">Contact</a>
                         @if (Auth::User() && Auth::User()->user_type == 'user')
                             <a href="{{ route('user.profile') }}">My Account</a>
                         @elseif(Auth::User() && Auth::User()->user_type == 'admin')
                             <a href="{{ route('admin.dashboard') }}">Dashboard</a>
+                        @elseif(Auth::User() && Auth::User()->user_type == 'ngo')
+                            <a href="{{ route('ngo.dashboard') }}">Dashboard</a>
                         @else
                             <a href="{{ url('/login') }}">Login Account</a>
                         @endif

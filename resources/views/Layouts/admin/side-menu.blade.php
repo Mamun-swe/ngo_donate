@@ -54,33 +54,18 @@
                 </li>
 
                 <li class="nav-item">
-                    <a href="" class="nav-link">
-                        <i class="nav-icon fas fa-copy"></i>
-                        <p>Photos</span></p>
-                    </a>
-                </li>
-
-                <li class="nav-item">
-                    <a href="" class="nav-link">
+                    <a href="{{route('admin.blog.index')}}" class="nav-link">
                         <i class="nav-icon fas fa-copy"></i>
                         <p>Blog</span></p>
                     </a>
                 </li>
 
                 <li class="nav-item">
-                    <a href="" class="nav-link">
+                    <a href="{{route('admin.team.index')}}" class="nav-link">
                         <i class="nav-icon fas fa-copy"></i>
                         <p>Team</span></p>
                     </a>
                 </li>
-
-                <li class="nav-item">
-                    <a href="" class="nav-link">
-                        <i class="nav-icon fas fa-copy"></i>
-                        <p>Booking Requests</span></p>
-                    </a>
-                </li>
-
 
                 <li class="nav-item has-treeview">
                     <a href="#" class="nav-link">
@@ -89,9 +74,9 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="" class="nav-link">
-                            <i class="far fa-circle nav-icon"></i>
-                            <p>Banner</p>
+                            <a href="{{route('admin.banner.index')}}" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Banner</p>
                             </a>
                         </li>
                     </ul>
