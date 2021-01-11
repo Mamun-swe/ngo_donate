@@ -1,10 +1,9 @@
 <?php
 
-use App\Http\Controllers\Admin\DashboardController;
-use App\Http\Controllers\Admin\BlogController;
-use App\Http\Controllers\Admin\TeamController;
 use App\Http\Controllers\Admin\BannerController;
-
+use App\Http\Controllers\Admin\BlogController;
+use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Controllers\Admin\TeamController;
 use App\Http\Controllers\Auth\AuthController;
 use App\Http\Controllers\NGO\NgoController;
 use App\Http\Controllers\User\ProfileController;
@@ -13,12 +12,11 @@ use Illuminate\Support\Facades\Route;
 
 // Website Routes
 Route::get('/', [WebsiteController::class, 'index'])->name('home');
-Route::get('/about-us',[WebsiteController::class, 'about'])->name('about');
-Route::get('/blog',[WebsiteController::class, 'blog'])->name('blog');
-Route::get('/blog/{id}/read',[WebsiteController::class, 'blogRead'])->name('blog.read');
-Route::get('/contact-us',[WebsiteController::class, 'contact'])->name('contact');
-Route::post('/message',[WebsiteController::class, 'message'])->name('message');
-
+Route::get('/about-us', [WebsiteController::class, 'about'])->name('about');
+Route::get('/blog', [WebsiteController::class, 'blog'])->name('blog');
+Route::get('/blog/{id}/read', [WebsiteController::class, 'blogRead'])->name('blog.read');
+Route::get('/contact-us', [WebsiteController::class, 'contact'])->name('contact');
+Route::post('/message', [WebsiteController::class, 'message'])->name('message');
 
 Route::get('/login', [WebsiteController::class, 'login'])->name('login');
 Route::get('/register', [WebsiteController::class, 'register'])->name('register');
