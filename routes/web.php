@@ -41,6 +41,8 @@ Route::group(['prefix' => 'user', 'as' => 'user.', 'middleware' => ['auth', 'use
 Route::group(['prefix' => 'ngo', 'as' => 'ngo.', 'middleware' => ['auth', 'ngoPermission']], function () {
     Route::get('/dashboard', [NgoController::class, 'Dashboard'])->name('dashboard');
     Route::post('/update-info', [NgoController::class, 'UpdateInfo'])->name('update.info');
+    Route::get('/doners', [NgoController::class, 'Doners'])->name('doners');
+    Route::get('/profile', [NgoController::class, 'Profile'])->name('profile');
 });
 
 // Admin Routes

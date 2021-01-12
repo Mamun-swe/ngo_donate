@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Website;
 use App\Http\Controllers\Controller;
 use App\Models\Banner;
 use App\Models\Blog;
+use App\Models\NgoInfo;
 use App\Models\Team;
 use Illuminate\Http\Request;
 
@@ -13,8 +14,9 @@ class WebsiteController extends Controller
     public function index()
     {
         $banners = Banner::orderBy('id', 'DESC')->get();
+        $ngos = NgoInfo::all();
         $blogs = Blog::orderBy('id', 'DESC')->take(3)->get();
-        return view('welcome', compact('banners', 'blogs'));
+        return view('welcome', compact('banners', 'ngos', 'blogs'));
     }
 
     public function about()

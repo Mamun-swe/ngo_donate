@@ -1,29 +1,33 @@
 @extends('Layouts.ngo.layout')
 @section('content')
+<div class="dashboard">
+    <div class="container py-3">
+        <div class="row">
 
-
-
-
-
-
-<h1>Ngo  {{Auth::User()->name}}</h1>
-<ul class="navbar-nav ml-auto">
-                <li class="nav-item dropdown">
-                    <a id="navbarDropdown" class="nav-link dropdown-toggle text-capitalize" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>{{ Auth::user()->name }} <span class="caret"></span>
-                    </a>
-
-                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="{{ route('auth.logout') }}"
-                            onclick="event.preventDefault();
-                            document.getElementById('logout-form').submit();">
-                            {{ __('Logout') }}
-                        </a>
-
-                        <form id="logout-form" action="{{ route('auth.logout') }}" method="POST" style="display: none;">
-                            @csrf
-                        </form>
+            <div class="col-6 col-md-4 col-lg-3">
+                <div class="card rounded-0 border-0 shadow-sm mb-3">
+                    <div class="card-body">
+                        <div class="flex-center flex-column text-center">
+                            <h3 class="mb-0"><b>120</b></h3>
+                            <h5 class="mb-0">Doners</h5>
+                        </div>
                     </div>
-                </li>
-            </ul>
+                </div>
+            </div>
 
-            @endsection
+            <div class="col-6 col-md-4 col-lg-3">
+                <div class="card rounded-0 border-0 shadow-sm mb-3">
+                    <div class="card-body">
+                        <div class="flex-center flex-column text-center">
+                            <h3 class="mb-0"><b>12000</b></h3>
+                            <h5 class="mb-0">Donate</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+@endsection

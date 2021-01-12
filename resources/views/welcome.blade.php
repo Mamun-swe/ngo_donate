@@ -22,14 +22,36 @@
     </div>
 </div>
 
+<!-- NGO -->
+<div class="ngo">
+    <div class="container">
+        <div class="row mb-4">
+            <div class="col-12 col-lg-7 m-auto text-center">
+                <h2>NGO</h2>
+                <p>Who helped people independent of government involvement are known as non-governmental organizations or non-government organizations</p>
+            </div>
+        </div>
 
+        <div class="row">
+            @foreach($ngos as $ngo)
+            <div class="col-12 col-md-6 col-md-4 col-lg-3 text-center m-auto">
+                <a href="">
+                    <div class="card rounded-circle mb-4 mb-lg-5">
+                        <img src="{{url('')}}/website/images/ngo/{{$ngo->image}}" class="img-fluid">
+                    </div>
+                </a>
+            </div>
+            @endforeach
+        </div>
+    </div>
+</div>
 
 <!-- Blog -->
 <div class="blog">
     <div class="container">
         <div class="row">
             <div class="col-12 mb-4 text-center">
-                <h1>Our Blog</h1>
+                <h2>Our Blog</h2>
             </div>
 
             @foreach($blogs as $blog)

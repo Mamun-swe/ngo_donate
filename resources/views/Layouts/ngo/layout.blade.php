@@ -15,25 +15,31 @@
 
     <script src="https://cdn.ckeditor.com/4.15.0/standard/ckeditor.js"></script>
 
-    <link rel="dns-prefetch" href="//fonts.gstatic.com">
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    <link href="{{ asset('css/ngo/layout.css') }}" rel="stylesheet" />
-
+    <link href="{{ asset('css/admin/adminlte.min.css') }}" rel="stylesheet" />
+    <link href="{{ asset('css/admin/OverlayScrollbars.min.css') }}" rel="stylesheet" />
+    <link href="{{ asset('css/admin/select2.min.css') }}" rel="stylesheet" />
+    <link href="{{ asset('css/admin/custom.css') }}" rel="stylesheet" />
+    <link href="{{ asset('css/admin/dashboard.css') }}" rel="stylesheet" />
+    
     <!-- Script -->
-    <script src="{{ asset('js/app.js') }}"></script>
+    <script src="{{ asset('js/admin/jquery.min.js') }}"></script>
+    <script src="{{ asset('js/admin/bootstrap.bundle.min.js') }}"></script>
+    <script src="{{ asset('js/admin/jquery.overlayScrollbars.min.js') }}"></script>
+    <script src="{{ asset('js/admin/adminlte.js') }}"></script>
+    <script src="{{ asset('js/admin/select2.min.js') }}"></script>
 </head>
 <body>
     <div id="app">
-        <div class="layout d-lg-flex">
-            <div class="side-menu">
-                
+        @if(Auth::user())
+            @include('Layouts.ngo.side-menu') 
+        <div class="content-wrapper">
+        @endif
+            <main>
+                @yield('content')
+            </main>
+        @if(Auth::user())
             </div>
-            <div class="main-menu flex-fill">
-                <main>
-                    @yield('content')
-                </main>
-            </div>
-        </div>
+        @endif
     </div>
 </body>
 </html>
