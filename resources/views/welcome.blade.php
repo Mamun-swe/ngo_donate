@@ -35,7 +35,7 @@
         <div class="row">
             @foreach($ngos as $ngo)
             <div class="col-12 col-md-6 col-md-4 col-lg-3 text-center m-auto">
-                <a href="">
+                <a href="{{route('ngo.view', $ngo->id)}}">
                     <div class="card rounded-circle mb-4 mb-lg-5">
                         <img src="{{url('')}}/website/images/ngo/{{$ngo->image}}" class="img-fluid">
                     </div>

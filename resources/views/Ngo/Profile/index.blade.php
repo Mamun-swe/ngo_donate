@@ -8,8 +8,6 @@
                 <div class="card-body">
                     <img src="{{url('')}}/website/images/ngo/{{$profile->image}}" class="img-fluid" />
                     <div class="pt-3">
-                        <h4 class="font-weight-bold mb-0">{{$profile->name}}</h4>
-                        <p class="mb-4">{{$profile->email}}</p>
                         {!! $profile->description !!}
                     </div>
                 </div>

@@ -15,6 +15,7 @@ Route::get('/', [WebsiteController::class, 'index'])->name('home');
 Route::get('/about-us', [WebsiteController::class, 'about'])->name('about');
 Route::get('/blog', [WebsiteController::class, 'blog'])->name('blog');
 Route::get('/blog/{id}/read', [WebsiteController::class, 'blogRead'])->name('blog.read');
+Route::get('/ngo/{id}/view', [WebsiteController::class, 'ngo'])->name('ngo.view');
 Route::get('/contact-us', [WebsiteController::class, 'contact'])->name('contact');
 Route::post('/message', [WebsiteController::class, 'message'])->name('message');
 

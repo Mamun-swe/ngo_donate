@@ -42,6 +42,12 @@ class WebsiteController extends Controller
         return view('Website.contact');
     }
 
+    public function ngo($id)
+    {
+        $profile = NgoInfo::where('id', $id)->first();
+        return view('Website.ngo.index', compact('profile'));
+    }
+
     public function message(Request $request)
     {
         $request->validate([
