@@ -10,16 +10,28 @@
                 <thead>
                     <tr>
                         <td><p class="mb-0 text-dark"><b>SL</b></p></td>
-                        <td><p class="mb-0 text-dark"><b>Title</b></p></td>
-                        <td><p class="mb-0 text-dark"><b>Image</b></p></td>
-                        <td><p class="mb-0 text-dark"><b>Short Details</b></p></td>
-                        <td><p class="mb-0 text-dark"><b>Published</b></p></td>
-                        <td class="text-center"><p class="mb-0 text-dark"><b>Action</b></p></td>
+                        <td><p class="mb-0 text-dark"><b>Name</b></p></td>
+                        <td><p class="mb-0 text-dark"><b>E-mail</b></p></td>
+                        <td><p class="mb-0 text-dark"><b>Phone</b></p></td>
+                        <td><p class="mb-0 text-dark"><b>Payment method</b></p></td>
+                        <td><p class="mb-0 text-dark"><b>Transaction number</b></p></td>
+                        <td><p class="mb-0 text-dark"><b>Amount</b></p></td>
+                        <td><p class="mb-0 text-dark"><b>Payment date</b></p></td>
                     </tr>
                 </thead>
                 <tbody>
-
-
+                @foreach($doners as $key => $doner)
+                    <tr>
+                        <td><p class="mb-0 text-dark">{{$key+1}}</p></td>
+                        <td><p class="mb-0 text-dark">{{$doner->name}}</p></td>
+                        <td><p class="mb-0 text-dark">{{$doner->email}}</p></td>
+                        <td><p class="mb-0 text-dark">{{$doner->phone}}</p></td>
+                        <td><p class="mb-0 text-dark">{{$doner->method}}</p></td>
+                        <td><p class="mb-0 text-dark">{{$doner->transaction_number}}</p></td>
+                        <td><p class="mb-0 text-dark">{{$doner->amount}}</p></td>
+                        <td><p class="mb-0 text-dark">{{ \Carbon\Carbon::parse($doner->created_at)->format('d/m/Y')}}</p></td>
+                    </tr>
+                @endforeach
                 </tbody>
             </table>
         </div>

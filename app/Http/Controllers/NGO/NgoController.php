@@ -5,6 +5,7 @@ namespace App\Http\Controllers\NGO;
 use App\Http\Controllers\Controller;
 use App\Models\NgoInfo;
 use App\Models\User;
+use App\Models\Donate;
 use Illuminate\Http\Request;
 
 class NgoController extends Controller
@@ -57,7 +58,8 @@ class NgoController extends Controller
     public function Doners()
     {
         if ($this->CheckInfo()) {
-            return view('Ngo.Doners.index');
+            $doners = Donate::where('ngo_id', Auth()->User()->id)->get();
+            return view('Ngo.Doners.index', compact('doners'));
         }
 
         return view('Ngo.Info.index');

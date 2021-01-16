@@ -7,6 +7,7 @@ use App\Models\Banner;
 use App\Models\Blog;
 use App\Models\NgoInfo;
 use App\Models\Team;
+use App\Models\Donate;
 use Illuminate\Http\Request;
 
 class WebsiteController extends Controller
@@ -45,7 +46,33 @@ class WebsiteController extends Controller
     public function ngo($id)
     {
         $profile = NgoInfo::where('id', $id)->first();
-        return view('Website.ngo.index', compact('profile'));
+        return view('Website.ngo.index', compact('profile', 'id'));
+    }
+
+    public function donate(Request $request)
+    {
+        $request->validate([
+            'ngo_id' => 'required',
+            'name' => 'required',
+            'email' => 'required',
+            'phone' => 'required',
+            'method' => 'required',
+            'transaction_number' => 'required',
+            'amount' => 'required',
+        ]);
+
+        $form_data = array(
+            'ngo_id'=> $request->ngo_id,
+            'name'=> $request->name,
+            'email'=> $request->email,
+            'phone'=> $request->phone,
+            'method'=> $request->method,
+            'transaction_number'=> $request->transaction_number,
+            'amount'=> $request->amount,
+        );
+
+        Donate::create($form_data);
+        return redirect()->back()->with('success', 'Successfully donate send .');
     }
 
     public function message(Request $request)
