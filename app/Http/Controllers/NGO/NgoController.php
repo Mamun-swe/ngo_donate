@@ -48,7 +48,9 @@ class NgoController extends Controller
     public function Dashboard()
     {
         if ($this->CheckInfo()) {
-            return view('Ngo.Dashboard.Index');
+            $doners = Donate::where('ngo_id', Auth()->User()->id)->count();
+            $total = Donate::where('ngo_id', Auth()->User()->id)->sum('amount');
+            return view('Ngo.Dashboard.Index', compact('doners', 'total'));
         }
 
         return view('Ngo.Info.index');

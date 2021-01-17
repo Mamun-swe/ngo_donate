@@ -8,7 +8,7 @@
                 <div class="card rounded-0 border-0 shadow-sm mb-3">
                     <div class="card-body">
                         <div class="flex-center flex-column text-center">
-                            <h3 class="mb-0"><b>120</b></h3>
+                            <h3 class="mb-0"><b>{{$doners}}</b></h3>
                             <h5 class="mb-0">Doners</h5>
                         </div>
                     </div>
@@ -19,7 +19,7 @@
                 <div class="card rounded-0 border-0 shadow-sm mb-3">
                     <div class="card-body">
                         <div class="flex-center flex-column text-center">
-                            <h3 class="mb-0"><b>12000</b></h3>
+                            <h3 class="mb-0"><b>{{$total}}</b></h3>
                             <h5 class="mb-0">Donate</h5>
                         </div>
                     </div>
